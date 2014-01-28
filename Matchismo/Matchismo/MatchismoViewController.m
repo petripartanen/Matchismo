@@ -10,9 +10,24 @@
 
 @interface MatchismoViewController ()
 
+@property int numberOfClicks;
+
 @end
 
 @implementation MatchismoViewController
 
+- (IBAction)touchCardButton:(UIButton *)sender
+{
+    if (self.numberOfClicks % 2 == 0) {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Cardfront"]
+                          forState:UIControlStateNormal];
+    } else {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Cardback"]
+                          forState:UIControlStateNormal];
+    }
+    
+
+    self.numberOfClicks++;
+}
 
 @end
