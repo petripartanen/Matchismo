@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB1D8BFA189D6E3A001E2FD6 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D8BF9189D6E3A001E2FD6 /* Card.m */; };
+		CB1D8BFE189D720F001E2FD6 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D8BFD189D720F001E2FD6 /* Deck.m */; };
 		CB3562851898123500A48D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562841898123500A48D89 /* Foundation.framework */; };
 		CB3562871898123500A48D89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562861898123500A48D89 /* CoreGraphics.framework */; };
 		CB3562891898123500A48D89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562881898123500A48D89 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		CB1D8BF8189D6E3A001E2FD6 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
 		CB1D8BF9189D6E3A001E2FD6 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
+		CB1D8BFC189D720F001E2FD6 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
+		CB1D8BFD189D720F001E2FD6 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Model/Deck.m; sourceTree = "<group>"; };
 		CB3562811898123500A48D89 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3562841898123500A48D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB3562861898123500A48D89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				CB1D8BF8189D6E3A001E2FD6 /* Card.h */,
+				CB1D8BFC189D720F001E2FD6 /* Deck.h */,
+				CB1D8BFD189D720F001E2FD6 /* Deck.m */,
 				CB1D8BF9189D6E3A001E2FD6 /* Card.m */,
 			);
 			name = Model;
@@ -263,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1D8BFE189D720F001E2FD6 /* Deck.m in Sources */,
 				CB3562951898123500A48D89 /* MatchismoAppDelegate.m in Sources */,
 				CB35629B1898123500A48D89 /* MatchismoViewController.m in Sources */,
 				CB3562911898123500A48D89 /* main.m in Sources */,
