@@ -18,11 +18,14 @@
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
 
++ (NSArray *)validSuits
+{
+    return @[@"♥",@"♦",@"♠",@"♣"];
+}
+
 - (void)setSuit:(NSString *)suit
 {
-    NSArray *validSuits = @[@"♥",@"♦",@"♠",@"♣"];
-    
-    if ([validSuits containsObject:suit]) {
+    if ([[PlayingCard validSuits] containsObject:suit]) {
         _suit = suit;
     }
 }
