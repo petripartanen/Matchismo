@@ -10,4 +10,9 @@
 
 @implementation PlayingCard
 
+- (NSString *)contents
+{
+    return [NSString stringWithFormat:@"%d%@", self.rank, self.suite];
+}
+
 @end
