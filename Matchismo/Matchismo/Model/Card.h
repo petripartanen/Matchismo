@@ -10,4 +10,8 @@
 
 @interface Card : NSObject
 
+@property (strong, nonatomic) NSString *contents;
+
+- (int)match:(NSArray *)otherCards;
+
 @end
