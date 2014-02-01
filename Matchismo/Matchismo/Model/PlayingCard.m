@@ -10,26 +10,26 @@
 
 @implementation PlayingCard
 
-@synthesize suite = _suite;
+@synthesize suit = _suit;
 
 - (NSString *)contents
 {
     NSArray *rankStrings = @[@"?", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
-    return [rankStrings[self.rank] stringByAppendingString:self.suite];
+    return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
 
-- (void)setSuite:(NSString *)suite
+- (void)setSuit:(NSString *)suit
 {
-    NSArray *validSuites = @[@"♥",@"♦",@"♠",@"♣"];
+    NSArray *validSuits = @[@"♥",@"♦",@"♠",@"♣"];
     
-    if ([validSuites containsObject:suite]) {
-        _suite = suite;
+    if ([validSuits containsObject:suit]) {
+        _suit = suit;
     }
 }
 
-- (NSString *)suite
+- (NSString *)suit
 {
-    return _suite ? _suite : @"?";
+    return _suit ? _suit : @"?";
 }
 
 @end
