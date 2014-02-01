@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1D8BFA189D6E3A001E2FD6 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D8BF9189D6E3A001E2FD6 /* Card.m */; };
 		CB3562851898123500A48D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562841898123500A48D89 /* Foundation.framework */; };
 		CB3562871898123500A48D89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562861898123500A48D89 /* CoreGraphics.framework */; };
 		CB3562891898123500A48D89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3562881898123500A48D89 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB1D8BF8189D6E3A001E2FD6 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
+		CB1D8BF9189D6E3A001E2FD6 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 		CB3562811898123500A48D89 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3562841898123500A48D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB3562861898123500A48D89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1D8BFB189D6E40001E2FD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB1D8BF8189D6E3A001E2FD6 /* Card.h */,
+				CB1D8BF9189D6E3A001E2FD6 /* Card.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CB3562781898123500A48D89 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3562961898123500A48D89 /* Main.storyboard */,
+				CB1D8BFB189D6E40001E2FD6 /* Model */,
 				CB3562991898123500A48D89 /* MatchismoViewController.h */,
 				CB35629A1898123500A48D89 /* MatchismoViewController.m */,
 				CB35629C1898123500A48D89 /* Images.xcassets */,
@@ -253,6 +266,7 @@
 				CB3562951898123500A48D89 /* MatchismoAppDelegate.m in Sources */,
 				CB35629B1898123500A48D89 /* MatchismoViewController.m in Sources */,
 				CB3562911898123500A48D89 /* main.m in Sources */,
+				CB1D8BFA189D6E3A001E2FD6 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +475,7 @@
 				CB3562B51898123500A48D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB3562B61898123500A48D89 /* Build configuration list for PBXNativeTarget "MatchismoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +484,7 @@
 				CB3562B81898123500A48D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
