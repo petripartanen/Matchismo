@@ -12,7 +12,10 @@
 
 - (NSString *)contents
 {
-    return [NSString stringWithFormat:@"%d%@", self.rank, self.suite];
+    NSArray *rankStrings = @[@"?", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
+    return [rankStrings[self.rank] stringByAppendingString:self.suite];
+}
+
 }
 
 @end
