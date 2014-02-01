@@ -10,11 +10,19 @@
 
 @interface MatchismoViewController ()
 
-@property int numberOfClicks;
+@property (nonatomic) int numberOfClicks;
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 
 @end
 
 @implementation MatchismoViewController
+
+- (void)setNumberOfClicks:(int)numberOfClicks
+{
+    _numberOfClicks = numberOfClicks;
+    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.numberOfClicks];
+    
+}
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
@@ -25,7 +33,6 @@
         [sender setBackgroundImage:[UIImage imageNamed:@"Cardback"]
                           forState:UIControlStateNormal];
     }
-    
 
     self.numberOfClicks++;
 }
