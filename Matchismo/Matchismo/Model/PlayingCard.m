@@ -14,8 +14,7 @@
 
 - (NSString *)contents
 {
-    NSArray *rankStrings = @[@"?", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
-    return [rankStrings[self.rank] stringByAppendingString:self.suit];
+    return [[PlayingCard rankStrings][self.rank] stringByAppendingString:self.suit];
 }
 
 + (NSArray *)validSuits
@@ -35,4 +34,8 @@
     return _suit ? _suit : @"?";
 }
 
++ (NSArray *)rankStrings
+{
+    return @[@"?", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
+}
 @end
