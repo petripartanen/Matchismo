@@ -34,6 +34,13 @@
     return _suit ? _suit : @"?";
 }
 
+- (void)setRank:(NSUInteger)rank
+{
+    if (rank <= [PlayingCard maxRank]) {
+        _rank = rank;
+    }
+}
+
 + (NSArray *)rankStrings
 {
     return @[@"?", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
