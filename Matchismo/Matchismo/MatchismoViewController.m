@@ -12,7 +12,7 @@
 
 @interface MatchismoViewController ()
 
-@property (nonatomic) int numberOfClicks;
+@property (nonatomic) NSInteger numberOfClicks;
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (strong, nonatomic) Deck *deck;
 
