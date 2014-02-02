@@ -106,18 +106,10 @@
                                     <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xrc-ml-Rcm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ5-Zi-6cp">
-                                <rect key="frame" x="20" y="439" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000596046448" green="1" blue="0.40000000596046448" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="flipsLabel" destination="mQ5-Zi-6cp" id="pIC-Td-oaa"/>
                         <outletCollection property="cardButtons" destination="b5U-1v-8EB" id="6rh-04-RnI"/>
                         <outletCollection property="cardButtons" destination="uhn-yT-eT9" id="e0e-HE-Ojz"/>
                         <outletCollection property="cardButtons" destination="914-s7-bwE" id="1jp-Cf-IEB"/>

@@ -13,9 +13,6 @@
 
 @interface MatchismoViewController ()
 
-@property (nonatomic) NSInteger numberOfClicks;
-@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
@@ -35,22 +32,6 @@
 - (PlayingCardDeck *)createDeck
 {
     return [[PlayingCardDeck alloc]init];
-}
-
-- (Deck *)deck
-{
-    if (!_deck) {
-        _deck = [[PlayingCardDeck alloc]init];
-    }
-    
-    return _deck;
-}
-
-- (void)setNumberOfClicks:(int)numberOfClicks
-{
-    _numberOfClicks = numberOfClicks;
-    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.numberOfClicks];
-    
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
