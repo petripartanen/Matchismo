@@ -58,4 +58,33 @@
     return (index < [self.cards count]) ? self.cards[index] : Nil;
 }
 
+- (void)chooseCardAtIndex:(NSUInteger)index
+{
+    Card *card = [self cardAtIndex:index];
+    
+    if (!card.isMatched) {
+        if (card.isChosen) {
+            card.chosen = NO;
+        } else {
+            for (Card *otherCard in self.cards) {
+                if (otherCard.isChosen && !otherCard.isMatched) {
+                    NSInteger matchScore = [card match:@[otherCard]];
+                    
+                    if (matchScore) {
+                        self.score += matchScore;
+                        otherCard.matched = YES;
+                        card.matched = YES;
+                    } else {
+                        otherCard.chosen = NO;
+                    }
+                    
+                    break;
+                }
+            }
+            
+            card.chosen = YES;
+        }
+    }
+}
+
 @end
