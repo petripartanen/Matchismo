@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
@@ -49,6 +50,7 @@
         
         [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %d", self.game.score]];
     }
 }
 
