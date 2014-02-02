@@ -17,11 +17,6 @@
     return [[PlayingCard rankStrings][self.rank] stringByAppendingString:self.suit];
 }
 
-+ (NSArray *)validSuits
-{
-    return @[@"♥",@"♦",@"♠",@"♣"];
-}
-
 - (void)setSuit:(NSString *)suit
 {
     if ([[PlayingCard validSuits] containsObject:suit]) {
@@ -39,6 +34,26 @@
     if (rank <= [PlayingCard maxRank]) {
         _rank = rank;
     }
+}
+
+- (NSInteger)match:(NSArray *)otherCards
+{
+    NSInteger score = 0;
+    
+    for (PlayingCard *card in otherCards) {
+        if ([card.suit isEqualToString:self.suit]) {
+            score = 2;
+        } else if (card.rank == self.rank) {
+            score = 4;
+        }
+    }
+    
+    return score;
+}
+
++ (NSArray *)validSuits
+{
+    return @[@"♥",@"♦",@"♠",@"♣"];
 }
 
 + (NSArray *)rankStrings
