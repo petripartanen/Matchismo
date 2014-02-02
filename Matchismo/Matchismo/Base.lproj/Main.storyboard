@@ -118,6 +118,15 @@
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="mQ5-Zi-6cp" id="pIC-Td-oaa"/>
+                        <outletCollection property="cardButtons" destination="b5U-1v-8EB" id="6rh-04-RnI"/>
+                        <outletCollection property="cardButtons" destination="uhn-yT-eT9" id="e0e-HE-Ojz"/>
+                        <outletCollection property="cardButtons" destination="914-s7-bwE" id="1jp-Cf-IEB"/>
+                        <outletCollection property="cardButtons" destination="Owc-H4-yDM" id="IBn-Ao-lND"/>
+                        <outletCollection property="cardButtons" destination="Myw-t6-iTh" id="gcE-Qj-HuJ"/>
+                        <outletCollection property="cardButtons" destination="hNW-zU-C4O" id="lvu-J9-f8I"/>
+                        <outletCollection property="cardButtons" destination="6ir-ep-9MD" id="Xkh-GV-Xh3"/>
+                        <outletCollection property="cardButtons" destination="1xo-Hb-8Us" id="Wg2-k6-RBY"/>
+                        <outletCollection property="cardButtons" destination="cku-hs-GX6" id="5VJ-HJ-TRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
