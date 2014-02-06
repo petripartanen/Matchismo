@@ -54,6 +54,10 @@
         [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %d", self.game.score]];
     }
 }
+- (IBAction)resetGame {
+    self.game = Nil;
+    [self updateUI];
+}
 
 - (NSString *)titleForCard:(Card *)card
 {
