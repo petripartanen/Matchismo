@@ -18,5 +18,6 @@
 - (void)chooseCardAtIndex:(NSUInteger)index;
 
 @property (readonly, nonatomic) NSInteger score;
+@property (nonatomic) NSInteger matchCardCount;
 
 @end
