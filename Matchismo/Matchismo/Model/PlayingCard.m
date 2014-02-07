@@ -42,9 +42,9 @@
     
     for (PlayingCard *card in otherCards) {
         if ([card.suit isEqualToString:self.suit]) {
-            score = 2;
+            score += 2;
         } else if (card.rank == self.rank) {
-            score = 4;
+            score += 4;
         }
     }
     
