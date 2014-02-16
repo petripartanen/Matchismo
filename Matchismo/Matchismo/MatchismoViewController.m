@@ -9,46 +9,79 @@
 #import "MatchismoViewController.h"
 #import "Deck.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface MatchismoViewController ()
 
-@property (nonatomic) int numberOfClicks;
-@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSwitch;
 
 @end
 
 @implementation MatchismoViewController
 
-- (Deck *)deck
+- (CardMatchingGame *)game
 {
-    if (!_deck) {
-        _deck = [[PlayingCardDeck alloc]init];
+    if (!_game) {
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
     }
     
-    return _deck;
+    return _game;
 }
 
-- (void)setNumberOfClicks:(int)numberOfClicks
+- (PlayingCardDeck *)createDeck
 {
-    _numberOfClicks = numberOfClicks;
-    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.numberOfClicks];
-    
+    return [[PlayingCardDeck alloc]init];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    if (self.numberOfClicks % 2 == 0) {
-        [sender setBackgroundImage:[UIImage imageNamed:@"Cardfront"]
-                          forState:UIControlStateNormal];
-        [sender setTitle:[self.deck drawRandomCard].contents forState:UIControlStateNormal];
-    } else {
-        [sender setBackgroundImage:[UIImage imageNamed:@"Cardback"]
-                          forState:UIControlStateNormal];
-        [sender setTitle:@"" forState:UIControlStateNormal];
-    }
+    NSInteger buttonIndex = [self.cardButtons indexOfObject:sender];
+    [self.game chooseCardAtIndex:buttonIndex];
 
-    self.numberOfClicks++;
+    self.gameModeSwitch.enabled = NO;
+    [self updateUI];
+}
+
+- (void)updateUI
+{
+    for (UIButton *button in self.cardButtons) {
+        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:button]];
+        
+        [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+        button.enabled = !card.isMatched;
+        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %d", self.game.score]];
+    }
+    
+    if (self.gameModeSwitch.isEnabled) {
+        [self.gameModeSwitch setSelectedSegmentIndex:self.game.matchCardCount - 2];
+    }
+}
+
+- (IBAction)resetGame
+{
+    self.game = Nil;
+    self.game.matchCardCount = 2;
+    self.gameModeSwitch.enabled = YES;
+    [self updateUI];
+}
+
+- (IBAction)switchGameMode:(UISegmentedControl *)sender
+{
+    self.game.matchCardCount = 2 + sender.selectedSegmentIndex;
+}
+
+- (NSString *)titleForCard:(Card *)card
+{
+    return card.isChosen ? card.contents : @"";
+}
+
+- (UIImage *)backgroundImageForCard:(Card *)card
+{
+    return card.isChosen ? [UIImage imageNamed:@"Cardfront"] : [UIImage imageNamed:@"Cardback"];
 }
 
 @end
